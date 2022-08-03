@@ -18,14 +18,18 @@ app.use(express.json())
 //     })
 // })
 
-app.get("/", async (req, res) => {
-    try {
-        let todos = await Todo.find({})
-        return res.json(todos)
-    }catch(e) {
-        return res.json(e)
-    }
+app.get("/", (req, res) => {
+    return res.send("hosted")
 })
+
+// app.get("/", async (req, res) => {
+//     try {
+//         let todos = await Todo.find({})
+//         return res.json(todos)
+//     }catch(e) {
+//         return res.json(e)
+//     }
+// })
 
 // app.get("/:id", (req, res) => {
 //     Todo.findById(req.params.id, (err, data) => {
